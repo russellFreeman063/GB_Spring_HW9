@@ -1,0 +1,14 @@
+server:
+  port: 8765
+
+
+spring:
+  application:
+    name: ApiGateWay
+  cloud:
+    gateway:
+      routes:
+        - id: BookStore
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/**
